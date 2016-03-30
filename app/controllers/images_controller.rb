@@ -1,5 +1,10 @@
 class ImagesController < ApplicationController
 
+  def index
+    @images = Image.all
+    @categoy = Category.all
+  end
+
   def new
     @image = Image.new
   end

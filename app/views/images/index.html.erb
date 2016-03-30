@@ -1,244 +1,26 @@
 <div id="gallery">
-        <h2> All Images </h2>
-
-          <div class="row">
-
+  <h2>All Images</h2>
+    <% if @images.exists? %>
+      <% @images.each_slice(4) do |image| %>
+        <div class="row">
+          <% image.each do |image| %>
             <div class="col-md-3">
               <div class="photo photo-type-line">
-                <a href="img/city1.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
+                <a href="<%=image.image_url()%>" class="photo-hover" data-lightbox="my-images" data-title="<%=image.image_title%>">
                   <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
+                    <div class="headline"><%= image.image_title%></div>
                     <div class="line"></div>
-                    <div class="desc">This is an image test</div>
+                    <div class="desc"><%=image.image_description%></div>
                   </div>
                   <div class="mask"></div>
                 </a>
-                <div class="photo-img"><img src="img/city1.jpg"></div>
+                <div class="photo-img"><%= image_tag image.image_url(:thumb) %></div>
               </div>
             </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city2.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city2.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city3.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city3.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city4.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city4.jpg"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="row">
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city5.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city5.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city6.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city6.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city7.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city7.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city8.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city8.jpg"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="row">
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city9.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city9.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city10.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city10.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city11.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city11.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city12.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city12.jpg"></div>
-              </div>
-            </div>
-
-          </div>
-
-           <div class="row">
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city13.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city13.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city14.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city14.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city15.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city15.jpg"></div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="photo photo-type-line">
-                <a href="img/city16.jpg" class="photo-hover" data-lightbox="my-images" data-title="Lorem Ipsum">
-                  <div class="photo-info">
-                    <div class="headline">Lorem Ipsum</div>
-                    <div class="line"></div>
-                    <div class="desc">This is an image test</div>
-                  </div>
-                  <div class="mask"></div>
-                </a>
-                <div class="photo-img"><img src="img/city16.jpg"></div>
-              </div>
-            </div>
-
-          </div>
-
+          <% end %>
         </div>
+      <% end %>
+      <% else %>
+        <p> There are no images </p>
+    <% end %>
+</div>
